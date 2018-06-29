@@ -50,7 +50,7 @@ module Daru
       # html code.
       def to_html(id=nil, options={})
         # More things can be added into table_script.erb
-        path = File.expand_path('../../templates/table_script.erb', __FILE__)
+        path = File.expand_path('../templates/table_script.erb', __dir__)
         template = File.read(path)
         id ||= SecureRandom.uuid # TODO: remove it or Use it for table tag.
         table_script = show_script(id, script_tag: false)
@@ -83,7 +83,7 @@ module Daru
         js << "\n</script>"
         js
       end
-    end # module Display end
+    end
 
     class DataTable
       include ActionView::Helpers::TagHelper # to use content_tag
